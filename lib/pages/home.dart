@@ -1,3 +1,4 @@
+import 'package:food_receipe/pages/favourite.dart';
 
 import 'receipes.dart';
 import 'package:flutter/cupertino.dart';
@@ -12,43 +13,21 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int currentindex = 0;
+  List<Map<int, Widget>> Screens = [
+    {
+      1: Screen(),
+    },
+    {
+      1: Favourite(),
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        leading: IconButton(
-          icon: const Icon(
-            Icons.menu,
-            color: Color(0xff079681),
-            size: 30,
-          ),
-          onPressed: () {},
-        ),
-        title: const Text(
-          'Recipe',
-          style: TextStyle(
-            color: Color(0xff079681),
-            fontSize: 25,
-          ),
-        ),
-        centerTitle: true,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.search,
-              color: Color(0xff079681),
-              size: 30,
-            ),
-          ),
-        ],
-      ),
-      body: const Screen(),
+
+      body: Screens[currentindex][1],
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: const Color(0xff079681),
         unselectedItemColor: Colors.black45,

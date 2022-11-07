@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:food_receipe/database/database.dart';
 
 
 import 'home.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Back.instance.open();
   runApp(const MyApp());
 }
 

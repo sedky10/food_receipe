@@ -1,4 +1,3 @@
-
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 import 'helper.dart';
@@ -25,7 +24,7 @@ class Back {
 create table $ColumntableTodo (
   $ColumnId integer primary key autoincrement,
   $ColumnName text not null,
-  $ColumnUrl integer not null,
+  $ColumnUrl text not null
  )
 ''');
     });
